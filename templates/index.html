@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Todos</h1>
+
+    <ul>
+    {% for todo in todos %}
+        <li>{{todo}}</li>
+    {% endfor %}
+    </ul> 
+
+    <form method="POST">
+        {{template_form.hidden_tag()}}
+        <p>
+            {{template_form.todo.label}}
+            {{template_form.todo()}}
+        </p>
+        <p>
+            {{template_form.submit()}}
+        </p>
+    </form>
+{% endblock %}
