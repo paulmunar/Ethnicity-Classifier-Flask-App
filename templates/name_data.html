@@ -1,24 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>will put ethnicolr here eventually</p>
-    <form method="POST">
-        {{template_form.hidden_tag()}}
-        <p>
-            {{template_form.first_name.label}}
-            {{template_form.first_name()}}
-            {% if first_name_race %}
-            <h3> Prediction: {{first_name_race | title}}</h3>
-            {% endif %}
-        </p>
-        <p>
-            {{template_form.last_name.label}}
-            {{template_form.last_name()}}
-            {% if last_name_race %}
-            <h3> Prediction: {{last_name_race | title}}</h3>
-            {% endif %}
-        </p>
-        <p>
-            {{template_form.submit()}}
-        </p>
-    </form>
+    <p>can add graphs and other data visualizations</p>
+    <h3>Ethnicity Prediction Statistics : {{name | title}}</h3> 
+    <ul>
+        {% for category in categories %}
+        <li>{{category | title}}: {{pred_df[category][0]}}</li>
+        {% endfor %}
+    </ul> 
 {% endblock %}

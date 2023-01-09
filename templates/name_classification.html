@@ -1,20 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>will put ethnicolr here eventually</p>
-    <form method="POST">
+    <form action="/name_classification" method="POST">
         {{template_form.hidden_tag()}}
         <p>
             {{template_form.first_name.label}}
             {{template_form.first_name()}}
             {% if first_name_race %}
-            <h3> Prediction: {{first_name_race | title}}</h3>
+            <h3>Prediction: <a href="{{ url_for('name_data', name=first_name) }}">{{first_name_race | title}}</a></h3>
             {% endif %}
         </p>
         <p>
             {{template_form.last_name.label}}
             {{template_form.last_name()}}
             {% if last_name_race %}
-            <h3> Prediction: {{last_name_race | title}}</h3>
+            <h3>Prediction: <a href="{{ url_for('name_data', name=last_name) }}">{{last_name_race | title}}</a></h3>
             {% endif %}
         </p>
         <p>
