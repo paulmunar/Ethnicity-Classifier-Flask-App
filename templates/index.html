@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Todos</h1>
+    <h1>Project Todos</h1>
 
     <ul>
     {% for todo in todos %}
-        <li>{{todo}}</li>
+        <li>{{todo.todo_text}}</li>
     {% endfor %}
     </ul> 
 
