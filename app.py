@@ -15,7 +15,7 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     todo_text = db.Column(db.String(100), index=True)
 
-# only need to run this line once! (can delete it now)
+# only need to run this line once!! (can delete it now)
 # with app.app_context():
 #     db.create_all()
 
