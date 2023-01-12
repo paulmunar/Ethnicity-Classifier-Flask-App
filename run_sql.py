@@ -14,10 +14,16 @@ first_todo = Todo(todo_text="Add face classification")
 # dont even need to put second_todo in a variable, can just straight add it 
 '''
 with app.app_context():
+    db.create_all()
     # all_persons = Person.query.all()
     # for person in all_persons:
     #     db.session.delete(person)
     #     db.session.commit()
+
+    db.session.add(Person(name="test", race_prediction="white",
+    api_mean=0.3, black_mean=0.2, 
+    hispanic_mean=0.4, white_mean=0.5))
+    db.session.commit()
 
 
     # only need to run this line once!! (can delete it now)
