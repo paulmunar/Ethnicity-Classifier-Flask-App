@@ -1,4 +1,4 @@
-from app import app, db, Todo
+from app import app, db, Todo, Person
 
 todos = ["Learn Flask", "Setup venv", "Add name classification", "Add face classification"]
 first_todo = Todo(todo_text="Add face classification")
@@ -14,6 +14,15 @@ first_todo = Todo(todo_text="Add face classification")
 # dont even need to put second_todo in a variable, can just straight add it 
 '''
 with app.app_context():
+    # all_persons = Person.query.all()
+    # for person in all_persons:
+    #     db.session.delete(person)
+    #     db.session.commit()
+
+
+    # only need to run this line once!! (can delete it now)
+     # db.create_all()
+
     # deleting a query
     # bad = Todo.query.get_or_404(6)
     # db.session.delete(bad)
