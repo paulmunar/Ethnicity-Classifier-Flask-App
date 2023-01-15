@@ -3,8 +3,9 @@
     <p>can add graphs and other data visualizations</p>
     <h3>Ethnicity Prediction Statistics : {{name | title}}</h3> 
     <ul>
-        {% for category in categories %}
-        <li>{{category | title}}: {{pred_df[category][0]}}</li>
-        {% endfor %}
+        <li>API Mean: {{person.api_mean}}</li>
+        <li>Black Mean: {{person.black_mean}}</li>
+        <li>Hispanic Mean: {{person.hispanic_mean}}</li>
+        <li>White Mean: {{person.white_mean}}</li>
     </ul> 
 {% endblock %}
