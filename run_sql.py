@@ -27,7 +27,8 @@ with app.app_context():
 
 
     # only need to run this line once!! (can delete it now)
-     # db.create_all()
+    # use this line when you add a new model
+    # db.create_all()
 
     # deleting a query
     # bad = Todo.query.get_or_404(6)

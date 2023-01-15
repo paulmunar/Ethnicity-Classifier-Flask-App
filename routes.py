@@ -48,8 +48,8 @@ def name_classification():
 @app.route('/name_classification/<name>')
 def name_data(name):
     # this is bad... repeating pred_census_ln
-    categories = ["api_mean", "black_mean", "hispanic_mean", "white_mean"]
+    # categories = ["api_mean", "black_mean", "hispanic_mean", "white_mean"]
     # names = [{"name":name}]
     # df = pd.DataFrame(names)
     # pred_df = pred_census_ln(df, "name", year=2010, num_iter=100, conf_int=0.9)
-    return render_template('name_data.html', name=name, categories=categories)
+    return render_template('name_data.html', name=name, person=Person.query.get({"name":name}))
